@@ -7,6 +7,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import { img_300, unvailable } from '../../config/config';
 
+// Movie detail
 const Movie = ({ movie }) => {
   if (movie) {
     const backgroundImg = movie.poster_path ? `${img_300}${movie.poster_path}` : unvailable;

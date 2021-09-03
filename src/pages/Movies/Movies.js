@@ -10,6 +10,7 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
 
   const fetchMovies = async () => {
+    /* Environment variable didn't work here, tested with : ${process.env.MOVIE_DB_API_KEY} */
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/discover/movie?api_key=00977a659f33d44e5b2dd79293442174&language=en-US&sort_by=popularity.desc`
     );
@@ -17,6 +18,7 @@ const Movies = () => {
   };
 
   useEffect(() => {
+    // Get movies list in English sorted by popularity
     fetchMovies();
   });
   return (

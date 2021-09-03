@@ -13,7 +13,7 @@ import { img_500 } from '../../config/config';
 const MovieDetail = () => {
   const [movie, setMovieDetail] = useState([]);
 
-  const { id } = useParams();
+  const { id } = useParams(); // Get the url param id
   const request = axios.CancelToken.source();
 
   //Check if there are any previous pending requests
@@ -23,8 +23,8 @@ const MovieDetail = () => {
 
   const fetchMovie = async () => {
     try {
-      /* La variable d'environnement n'a pas fonctionné ici, testé avec : ${process.env.MOVIE_DB_API_KEY} */
-      /* Voir pour arrêter la requête GET en continue*/
+      /* Environment variable didn't work here, tested with : ${process.env.MOVIE_DB_API_KEY} */
+      /* TODO : Stop the continuous GET request */
 
       const response = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}?api_key=00977a659f33d44e5b2dd79293442174&language=en-US`,
